@@ -1,0 +1,2365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ─── Primary SEO ─── -->
+<title>PDF Accessibility — The Complete Guide · dtp-services.de</title>
+<meta name="description" content="Everything you need to know about PDF accessibility — explained in plain language. Tags, alt text, WCAG, PDF/UA, laws, tools, and a full glossary. The definitive free guide by dtp-services.de.">
+<meta name="keywords" content="PDF accessibility, accessible PDF, PDF/UA, WCAG, screen reader, alt text, PDF tags, EN 301 549, EU Accessibility Act, Section 508, remediation, dtp-services">
+<meta name="author" content="dtp-services.de">
+<link rel="canonical" href="https://dtp-services.github.io/pdf-accessibility-explained/">
+
+<!-- ─── Robots ─── -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+<!-- ─── Open Graph (Facebook, LinkedIn, WhatsApp) ─── -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="PDF Accessibility — The Complete Guide">
+<meta property="og:description" content="Everything you need to know about PDF accessibility in plain language. Tags, alt text, WCAG, PDF/UA, laws, tools, checklist and glossary. Free and open.">
+<meta property="og:url" content="https://dtp-services.github.io/pdf-accessibility-explained/">
+<meta property="og:site_name" content="dtp-services.de">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="https://www.dtp-services.de">
+<meta property="article:published_time" content="2025-05-01">
+<meta property="article:section" content="Accessibility">
+<meta property="article:tag" content="PDF accessibility">
+<meta property="article:tag" content="WCAG">
+<meta property="article:tag" content="PDF/UA">
+
+<!-- ─── Twitter / X Card ─── -->
+
+<!-- ─── JSON-LD Structured Data ─── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://dtp-services.github.io/pdf-accessibility-explained/#article",
+      "headline": "PDF Accessibility — The Complete Guide",
+      "description": "Everything you need to know about PDF accessibility in plain language. Covers tags, alt text, reading order, WCAG, PDF/UA, laws, testing tools, checklist, and glossary.",
+      "url": "https://dtp-services.github.io/pdf-accessibility-explained/",
+      "inLanguage": "en",
+      "datePublished": "2025-05-01",
+      "dateModified": "2025-05-01",
+      "author": {
+        "@type": "Organization",
+        "name": "dtp-services.de",
+        "url": "https://www.dtp-services.de",
+        "email": "hello@dtp-services.de",
+        "sameAs": [
+          "https://www.instagram.com/dtp_services_berlin/"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "dtp-services.de",
+        "url": "https://www.dtp-services.de",
+        "sameAs": [
+          "https://www.instagram.com/dtp_services_berlin/"
+        ]
+      },
+      "about": [
+        { "@type": "Thing", "name": "PDF accessibility" },
+        { "@type": "Thing", "name": "WCAG" },
+        { "@type": "Thing", "name": "PDF/UA" },
+        { "@type": "Thing", "name": "Screen readers" },
+        { "@type": "Thing", "name": "Digital accessibility" }
+      ],
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "dtp-services.de",
+          "item": "https://www.dtp-services.de"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PDF Accessibility Guide",
+          "item": "https://dtp-services.github.io/pdf-accessibility-explained/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is PDF accessibility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A PDF is accessible when every person — including people who use screen readers, people with low vision, people with motor disabilities, and people with cognitive disabilities — can read, understand, and navigate it fully."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is PDF accessibility required by law?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The EU Accessibility Act applies to private companies from June 2025. In the USA, the ADA and Section 508 apply to federal agencies and contractors. Many other countries have similar requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is PDF/UA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PDF/UA (ISO 14289) is the international standard for universally accessible PDF files. It defines the technical requirements a PDF must meet to be considered fully accessible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What tools can I use to check PDF accessibility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PAC 2024 (free, Windows) is one of the most thorough automated PDF accessibility checkers. Adobe Acrobat Pro also includes an accessibility checker. Manual testing with a screen reader like NVDA or VoiceOver is essential alongside automated tools."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are PDF tags?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PDF tags are hidden structural labels attached to every element in an accessible PDF. They define what each element is: heading, paragraph, list, table, image, link, and more. Without tags, screen readers cannot interpret the document."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  @import url('data:text/css,');
+
+  :root {
+    --ink: #1a1a2e;
+    --ink-soft: #2d2d4e;
+    --ink-muted: #6b7280;
+    --paper: #fafaf7;
+    --paper-warm: #f4f1eb;
+    --paper-card: #ffffff;
+    --accent: #2563a8;
+    --accent-light: #dbeafe;
+    --accent-glow: rgba(37,99,168,0.15);
+    --teal: #0f766e;
+    --teal-light: #ccfbf1;
+    --amber: #b45309;
+    --amber-light: #fef3c7;
+    --pipe-color: rgba(37,99,168,0.12);
+    --pipe-light: rgba(37,99,168,0.7);
+    --pipe-stroke: rgba(37,99,168,0.18);
+    --green: #166534;
+    --green-light: #dcfce7;
+    --red: #991b1b;
+    --red-light: #fee2e2;
+    --purple: #581c87;
+    --purple-light: #f3e8ff;
+    --border: rgba(0,0,0,0.08);
+    --radius: 16px;
+    --radius-sm: 8px;
+    --shadow: 0 4px 24px rgba(0,0,0,0.07);
+    --shadow-lg: 0 12px 48px rgba(0,0,0,0.12);
+    --font-display: 'Georgia', 'Times New Roman', serif;
+    --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'Courier New', monospace;
+    --max-w: 860px;
+    --side-note-w: 260px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--ink);
+    background: var(--paper);
+    overflow-x: hidden;
+  }
+
+  /* ─── PIPE BACKGROUND ─── */
+  #pipe-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 1;
+  }
+
+  /* ─── LAYOUT ─── */
+  .pipe-veil {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background: rgba(250,250,247,0.82);
+    pointer-events: none;
+  }
+
+  .page-wrap {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px 60px;
+    position: relative;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 7vw, 6rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    max-width: 820px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--ink-muted);
+    max-width: 580px;
+    margin-bottom: 48px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink-muted);
+    font-size: 13px;
+    animation: fadeUp 0.8s 0.4s ease both;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero-scroll-arrow {
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid var(--ink-muted);
+    border-bottom: 2px solid var(--ink-muted);
+    transform: rotate(45deg);
+    animation: bounce 1.4s ease infinite;
+  }
+
+  /* ─── VIDEO SECTION ─── */
+  .video-section {
+    max-width: var(--max-w);
+    margin: 0 auto 80px;
+    padding: 0 24px;
+  }
+
+  .video-embed {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--ink);
+    aspect-ratio: 16/9;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .video-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  .video-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    gap: 20px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .video-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(37,99,168,0.3) 0%, transparent 70%);
+  }
+
+  .play-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+  }
+
+  .play-btn svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
+    margin-left: 4px;
+  }
+
+  .video-placeholder p {
+    font-size: 16px;
+    opacity: 0.8;
+    position: relative;
+    z-index: 1;
+  }
+
+  .video-caption {
+    text-align: center;
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin-top: 16px;
+  }
+
+  /* ─── CONTENT ─── */
+  .content {
+    max-width: calc(var(--max-w) + var(--side-note-w) + 48px);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .section {
+    position: relative;
+    margin-bottom: 100px;
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Two-column layout: main + sidebar */
+  .section-inner {
+    display: grid;
+    grid-template-columns: 1fr var(--side-note-w);
+    gap: 48px;
+    align-items: start;
+  }
+
+  .section-main {}
+  .section-aside {
+    position: sticky;
+    top: 32px;
+  }
+
+  /* Wide sections without sidebar */
+  .section-wide .section-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .section-wide .section-main {
+    max-width: var(--max-w);
+  }
+
+  /* ─── CHAPTER LABEL ─── */
+  .chapter-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .chapter-label::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  /* ─── HEADINGS ─── */
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+
+  h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 16px;
+    margin-top: 40px;
+  }
+
+  h3:first-child { margin-top: 0; }
+
+  p {
+    margin-bottom: 20px;
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    line-height: 1.8;
+    color: var(--ink-soft);
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s;
+  }
+  a:hover { opacity: 0.75; }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    width: 64px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+    margin: 32px 0;
+    opacity: 0.4;
+  }
+
+  /* ─── INFO BOX (aside) ─── */
+  .info-box {
+    background: var(--paper-card);
+    border: 1.5px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .info-box:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .info-box.law { border-left-color: var(--red); }
+  .info-box.standard { border-left-color: var(--teal); }
+  .info-box.tip { border-left-color: var(--amber); }
+  .info-box.fact { border-left-color: var(--purple); }
+  .info-box.resource { border-left-color: var(--green); }
+
+  .info-box-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .info-box.law .info-box-label { color: var(--red); }
+  .info-box.standard .info-box-label { color: var(--teal); }
+  .info-box.tip .info-box-label { color: var(--amber); }
+  .info-box.fact .info-box-label { color: var(--purple); }
+  .info-box.resource .info-box-label { color: var(--green); }
+
+  .info-box-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+  }
+
+  .info-box.law .info-box-icon { background: var(--red-light); color: var(--red); }
+  .info-box.standard .info-box-icon { background: var(--teal-light); color: var(--teal); }
+  .info-box.tip .info-box-icon { background: var(--amber-light); color: var(--amber); }
+  .info-box.fact .info-box-icon { background: var(--purple-light); color: var(--purple); }
+  .info-box.resource .info-box-icon { background: var(--green-light); color: var(--green); }
+
+  .info-box h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .info-box p {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  .info-box a {
+    font-size: 13px;
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 600;
+  }
+
+  /* ─── INLINE TIP ─── */
+  .inline-tip {
+    background: var(--amber-light);
+    border-left: 4px solid var(--amber);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin: 28px 0;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+
+  .inline-tip strong {
+    color: var(--amber);
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  /* ─── DID YOU KNOW ─── */
+  .did-you-know {
+    background: var(--purple-light);
+    border: 1.5px solid rgba(88,28,135,0.15);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .did-you-know::before {
+    content: '?';
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-display);
+    font-size: 120px;
+    font-weight: 900;
+    color: rgba(88,28,135,0.06);
+    line-height: 1;
+  }
+
+  .did-you-know-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 10px;
+  }
+
+  .did-you-know p {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.6;
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── GRID CARDS ─── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 32px 0;
+  }
+
+  .card {
+    background: var(--paper-card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .card p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  /* ─── CHECKLIST ─── */
+  .checklist {
+    list-style: none;
+    margin: 24px 0;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .checklist li:last-child { border-bottom: none; }
+
+  .check-icon {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    border-radius: 50%;
+    background: var(--green-light);
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  /* ─── BIG QUOTE ─── */
+  .big-quote {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--accent);
+    line-height: 1.4;
+    border-left: 5px solid var(--accent);
+    padding-left: 28px;
+    margin: 40px 0;
+  }
+
+  /* ─── TAG ROW ─── */
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+  }
+
+  .tag {
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .tag-blue { background: var(--accent-light); color: var(--accent); }
+  .tag-teal { background: var(--teal-light); color: var(--teal); }
+  .tag-amber { background: var(--amber-light); color: var(--amber); }
+  .tag-red { background: var(--red-light); color: var(--red); }
+  .tag-green { background: var(--green-light); color: var(--green); }
+  .tag-purple { background: var(--purple-light); color: var(--purple); }
+
+  /* ─── STEP FLOW ─── */
+  .steps {
+    margin: 32px 0;
+  }
+
+  .step {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 28px;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 15px;
+    position: relative;
+  }
+
+  .step-num::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: var(--border);
+    margin-top: 4px;
+  }
+
+  .step:last-child .step-num::after { display: none; }
+
+  .step-content h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .step-content p {
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* ─── WCAG TABLE ─── */
+  .criteria-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 14px;
+  }
+
+  .criteria-table th {
+    background: var(--ink);
+    color: white;
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .criteria-table th:first-child { border-radius: 8px 0 0 0; }
+  .criteria-table th:last-child { border-radius: 0 8px 0 0; }
+
+  .criteria-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  .criteria-table tr:last-child td { border-bottom: none; }
+  .criteria-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+
+  .level-a { background: var(--red-light); color: var(--red); padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+  .level-aa { background: var(--amber-light); color: var(--amber); padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+  .level-aaa { background: var(--green-light); color: var(--green); padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+
+  /* ─── RESOURCES LIST ─── */
+  .resource-list {
+    list-style: none;
+    margin: 24px 0;
+  }
+
+  .resource-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 20px;
+    background: var(--paper-card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .resource-list li:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow);
+  }
+
+  .resource-list .r-icon {
+    font-size: 20px;
+    margin-top: 2px;
+  }
+
+  .resource-list .r-body { flex: 1; }
+  .resource-list .r-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .resource-list .r-desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .resource-list a {
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* ─── SECTION DIVIDER ─── */
+  .section-break {
+    text-align: center;
+    margin: 60px 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: var(--max-w);
+  }
+
+  .section-break::before, .section-break::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .section-break span {
+    font-size: 20px;
+  }
+
+  /* ─── CTA SECTION ─── */
+  .cta-section {
+    background: var(--ink);
+    color: white;
+    padding: 100px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(37,99,168,0.4) 0%, transparent 65%);
+  }
+
+  .cta-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .cta-section h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .cta-section p {
+    color: rgba(255,255,255,0.75);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto 40px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.25s;
+    cursor: pointer;
+    border: none;
+    line-height: 1;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 0 0 0 rgba(37,99,168,0.5);
+  }
+
+  .btn-primary:hover {
+    background: #1d4ed8;
+    box-shadow: 0 0 0 8px rgba(37,99,168,0.15);
+    transform: translateY(-2px);
+    color: white;
+  }
+
+  .btn-ghost {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+  }
+
+  .btn-ghost:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+    color: white;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  footer p {
+    color: rgba(255,255,255,0.45);
+    font-size: 13px;
+    margin: 0;
+  }
+
+  footer a {
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ─── PROGRESS BAR ─── */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--accent);
+    z-index: 100;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 8px rgba(37,99,168,0.6);
+  }
+
+  /* ─── NAV ─── */
+  .top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s;
+  }
+
+  .top-nav.scrolled {
+    background: rgba(250,250,247,0.9);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover { color: var(--accent); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(5px); }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .section-inner {
+      grid-template-columns: 1fr;
+    }
+    .section-aside {
+      position: static;
+    }
+    :root { --side-note-w: 100%; }
+  }
+
+  @media (max-width: 600px) {
+    .card-grid { grid-template-columns: 1fr; }
+    .cta-buttons { flex-direction: column; }
+    .btn { justify-content: center; }
+  }
+
+  /* ─── HIGHLIGHT ROW ─── */
+  .highlight-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 28px 0;
+  }
+
+  .highlight-chip {
+    flex: 1;
+    min-width: 140px;
+    background: var(--paper-card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    text-align: center;
+  }
+
+  .highlight-chip .big-num {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .highlight-chip p {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* ─── TOC ─── */
+  .toc {
+    background: var(--paper-card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-bottom: 60px;
+    max-width: var(--max-w);
+  }
+
+  .toc h3 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin: 0 0 16px;
+  }
+
+  .toc ol {
+    list-style: none;
+    counter-reset: toc;
+    columns: 2;
+    gap: 0;
+  }
+
+  @media (max-width: 600px) { .toc ol { columns: 1; } }
+
+  .toc li {
+    counter-increment: toc;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+    break-inside: avoid;
+  }
+  .toc li:last-child { border-bottom: none; }
+
+  .toc a {
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.2s;
+  }
+  .toc a:hover { color: var(--accent); }
+
+  .toc a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    min-width: 24px;
+  }
+
+  /* ─── CONTRAST BOX ─── */
+  .contrast-demo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .contrast-bad {
+    background: #aaa;
+    color: #ccc;
+    padding: 20px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+  }
+
+  .contrast-good {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 20px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .contrast-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .contrast-label.bad { color: var(--red); }
+  .contrast-label.good { color: var(--green); }
+
+</style>
+</head>
+<body>
+
+<!-- Progress bar -->
+<div class="progress-bar" id="progress"></div>
+
+<!-- Navigation -->
+<nav class="top-nav" id="topNav">
+  <a href="https://www.dtp-services.de" class="nav-logo" target="_blank" rel="noopener">dtp<span>-services.de</span></a>
+  <a href="mailto:hello@dtp-services.de" class="nav-link">hello@dtp-services.de</a>
+</nav>
+
+<!-- Pipe background canvas -->
+<canvas id="pipe-canvas" aria-hidden="true"></canvas>
+<div class="pipe-veil" aria-hidden="true"></div>
+
+<div class="page-wrap">
+
+  <!-- ═══════════════════════════════════════ HERO ═══ -->
+  <section class="hero">
+    <div class="hero-badge">📄 The Complete Guide</div>
+    <h1>PDF<br><em>Accessibility</em><br>Explained.</h1>
+    <p class="hero-sub">What it is, why it matters, how to do it right — in plain language anyone can understand.</p>
+    <div class="hero-scroll" aria-hidden="true">
+      <span style="font-size:13px;">scroll to read</span>
+      <div class="hero-scroll-arrow"></div>
+    </div>
+  </section>
+
+  <div class="content">
+
+
+
+    <!-- ═══ TABLE OF CONTENTS ═══ -->
+    <div class="toc" role="navigation" aria-label="Table of contents">
+      <h3>In this guide</h3>
+      <ol>
+        <li><a href="#what-is">What is PDF Accessibility?</a></li>
+        <li><a href="#who">Who benefits?</a></li>
+        <li><a href="#why-law">Why it's required by law</a></li>
+        <li><a href="#how-it-works">How accessible PDFs work</a></li>
+        <li><a href="#tags">Tags: the invisible skeleton</a></li>
+        <li><a href="#alt-text">Images and alt text</a></li>
+        <li><a href="#reading-order">Reading order</a></li>
+        <li><a href="#wcag">WCAG criteria that matter</a></li>
+        <li><a href="#tools">Testing tools</a></li>
+        <li><a href="#checklist">The quick checklist</a></li>
+        <li><a href="#resources">Resources and links</a></li>
+        <li><a href="#glossary">Glossary</a></li>
+      </ol>
+    </div>
+
+    <!-- ═══ SECTION 1: WHAT IS ═══ -->
+    <section class="section" id="what-is">
+      <div class="section-inner">
+        <div class="section-main">
+          <div class="chapter-label">Chapter 01</div>
+          <h2>What is PDF Accessibility?</h2>
+          <p>A PDF is <strong>accessible</strong> when every person — including people who use screen readers, people with low vision, people with motor impairments, and people with cognitive disabilities — can read, understand, and navigate it fully.</p>
+          <p>Think of it like a building. A non-accessible building might have stairs at the entrance. A building with a ramp alongside those stairs is accessible — it works for <em>everyone</em>, not just people who can walk.</p>
+          <p>An accessible PDF works the same way. It doesn't look different to most people. But underneath the visual layer, it has a carefully built structure that allows assistive technology — like screen readers — to interpret and read it out loud in a way that makes sense.</p>
+
+          <div class="big-quote">"Accessibility is not about a small minority. It's about everyone, including your future self."</div>
+
+          <div class="highlight-row">
+            <div class="highlight-chip">
+              <span class="big-num">1.3B</span>
+              <p>people worldwide live with some form of disability</p>
+            </div>
+            <div class="highlight-chip">
+              <span class="big-num">96%</span>
+              <p>of top websites fail basic accessibility checks</p>
+            </div>
+            <div class="highlight-chip">
+              <span class="big-num">2.2B</span>
+              <p>people have a vision impairment of some kind</p>
+            </div>
+          </div>
+
+          <div class="did-you-know">
+            <div class="did-you-know-label">💡 Did you know?</div>
+            <p>Most PDFs created by exporting from Word, InDesign, or Canva are <strong>not accessible by default</strong>. Accessibility requires deliberate action during the creation process — it doesn't happen automatically.</p>
+          </div>
+        </div>
+
+        <aside class="section-aside">
+          <div class="info-box standard">
+            <div class="info-box-label"><div class="info-box-icon">≡</div> Standard</div>
+            <h4>PDF/UA — ISO 14289</h4>
+            <p>PDF/UA (Universal Accessibility) is the international standard for accessible PDFs. It defines exactly what an accessible PDF must contain — from tagging to metadata.</p>
+            <a href="https://www.iso.org/standard/64599.html" target="_blank" rel="noopener">ISO 14289 ↗</a>
+          </div>
+
+          <div class="info-box tip">
+            <div class="info-box-label"><div class="info-box-icon">✦</div> Tiny tip</div>
+            <h4>Start accessible</h4>
+            <p>It's far easier to build accessibility in from the start than to retrofit it later. Every minute you spend now saves hours of rework.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="section-break"><span>✦</span></div>
+
+    <!-- ═══ SECTION 2: WHO ═══ -->
+    <section class="section" id="who">
+      <div class="section-inner">
+        <div class="section-main">
+          <div class="chapter-label">Chapter 02</div>
+          <h2>Who benefits from accessible PDFs?</h2>
+          <p>The word "disability" can make some people think this is a niche issue. It isn't. Accessible design benefits a much wider group of people than most assume.</p>
+
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon" style="background:#dbeafe;">🦯</div>
+              <h4>People who are blind</h4>
+              <p>Use screen readers that read out every element. A poorly tagged PDF becomes an unintelligible jumble of random text fragments.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon" style="background:#fef3c7;">👁️</div>
+              <h4>Low-vision users</h4>
+              <p>May zoom in 200–400%. Need proper reflow and scalable text so the document doesn't break apart at large sizes.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon" style="background:#dcfce7;">🖱️</div>
+              <h4>People with motor disabilities</h4>
+              <p>Navigate with keyboard only or switch devices. Need logical tab order and accessible forms they can actually fill in.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon" style="background:#f3e8ff;">🧠</div>
+              <h4>Cognitive differences</h4>
+              <p>Clear structure, plain language, and logical reading order help people with dyslexia, ADHD, or cognitive disabilities comprehend content.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon" style="background:#ccfbf1;">👴</div>
+              <h4>Older adults</h4>
+              <p>Age-related vision and hearing changes affect over 40% of people over 60. Accessible design meets their needs too.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon" style="background:#fee2e2;">📱</div>
+              <h4>Mobile users</h4>
+              <p>Reflowable, well-structured PDFs work far better on small screens. Accessibility helps everyone on any device.</p>
+            </div>
+          </div>
+
+          <div class="inline-tip">
+            <strong>💡 Tiny tip</strong>
+            Think of it as the "curb cut effect" — ramps built for wheelchair users also help people with prams, delivery workers, cyclists, and everyone else. Accessibility is good design for all.
+          </div>
+        </div>
+
+        <aside class="section-aside">
+          <div class="info-box fact">
+            <div class="info-box-label"><div class="info-box-icon">★</div> Did you know?</div>
+            <h4>16% of the global population</h4>
+            <p>That's roughly 1.3 billion people — live with a significant disability according to the WHO. That's not a niche. That's your audience.</p>
+            <a href="https://www.who.int/news-room/fact-sheets/detail/disability-and-health" target="_blank" rel="noopener">WHO Disability Facts ↗</a>
+          </div>
+
+          <div class="info-box tip">
+            <div class="info-box-label"><div class="info-box-icon">✦</div> Tiny tip</div>
+            <h4>Situational disability</h4>
+            <p>A parent holding a baby, someone in bright sunlight, a person in a loud office — everyone experiences temporary accessibility needs. Accessible PDFs serve them too.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="section-break"><span>✦</span></div>
+
+    <!-- ═══ SECTION 3: LAWS ═══ -->
+    <section class="section" id="why-law">
+      <div class="section-inner">
+        <div class="section-main">
+          <div class="chapter-label">Chapter 03</div>
+          <h2>Why it's required by law</h2>
+          <p>PDF accessibility is not just a nice-to-have. In many countries, it is a <strong>legal requirement</strong> — especially for public sector organisations, businesses above a certain size, and any company serving the public.</p>
+          <p>Failing to provide accessible documents can result in fines, lawsuits, loss of public contracts, and significant reputational damage. The legal trend is clear: requirements are getting stricter, not looser.</p>
+
+          <div class="tag-row">
+            <span class="tag tag-red">EU Accessibility Act</span>
+            <span class="tag tag-blue">EN 301 549</span>
+            <span class="tag tag-teal">ADA (USA)</span>
+            <span class="tag tag-amber">AODA (Canada)</span>
+            <span class="tag tag-purple">WCAG 2.1 AA</span>
+            <span class="tag tag-green">PDF/UA ISO 14289</span>
+          </div>
+
+          <h3>The European Accessibility Act (EAA)</h3>
+          <p>From <strong>28 June 2025</strong>, the European Accessibility Act applies to a wide range of private companies doing business in the EU. This includes digital documents — including PDFs — shared with customers or the public. This is a major shift: previously, these rules mainly applied to the public sector.</p>
+
+          <h3>EN 301 549</h3>
+          <p>The European standard EN 301 549 defines the technical requirements for accessible ICT products and services in Europe. It references WCAG 2.1 and PDF/UA as the relevant standards for documents. Public procurement contracts in the EU must typically comply with this standard.</p>
+
+          <h3>In the USA: ADA & Section 508</h3>
+          <p>The Americans with Disabilities Act (ADA) has been applied to digital documents through numerous lawsuits. Section 508 of the Rehabilitation Act requires federal agencies and their contractors to ensure ICT products — including PDFs — are accessible. Courts have consistently ruled that inaccessible PDFs violate ADA requirements.</p>
+
+          <div class="did-you-know">
+            <div class="did-you-know-label">💡 Did you know?</div>
+            <p>The number of accessibility-related lawsuits in the USA has grown by over <strong>300%</strong> in the past five years. Many target company documents — including PDFs — not just websites.</p>
+          </div>
+        </div>
+
+        <aside class="section-aside">
+          <div class="info-box law">
+            <div class="info-box-label"><div class="info-box-icon">⚖</div> Law</div>
+            <h4>EU Accessibility Act</h4>
+            <p>Directive (EU) 2019/882. Applies to private companies from June 2025. Covers digital services and products, including downloadable documents.</p>
+            <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0882" target="_blank" rel="noopener">Read the directive ↗</a>
+          </div>
+
+          <div class="info-box law">
+            <div class="info-box-label"><div class="info-box-icon">⚖</div> Law</div>
+            <h4>Section 508 (USA)</h4>
+            <p>Requires federal agencies and contractors to make ICT accessible, including PDF documents shared with or used by federal employees or the public.</p>
+            <a href="https://www.section508.gov/develop/pdfs/" target="_blank" rel="noopener">Section 508 PDF guidance ↗</a>
+          </div>
+
+          <div class="info-box standard">
+            <div class="info-box-label"><div class="info-box-icon">≡</div> Standard</div>
+            <h4>EN 301 549</h4>
+            <p>European ICT accessibility standard. References WCAG 2.1 AA and PDF/UA. Mandatory for EU public procurement. Increasingly adopted by private sector.</p>
+            <a href="https://www.etsi.org/deliver/etsi_en/301500_302000/301549/03.02.01_60/en_301549v030201p.pdf" target="_blank" rel="noopener">Download EN 301 549 ↗</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="section-break"><span>✦</span></div>
+
+    <!-- ═══ SECTION 4: HOW IT WORKS ═══ -->
+    <section class="section" id="how-it-works">
+      <div class="section-inner">
+        <div class="section-main">
+          <div class="chapter-label">Chapter 04</div>
+          <h2>How accessible PDFs actually work</h2>
+          <p>Here's a mental model that helps: imagine every PDF as having <strong>two layers</strong>.</p>
+          <p>The <strong>visual layer</strong> is what you see on screen. Beautiful typography, images, columns, colour — everything that makes a document look good.</p>
+          <p>The <strong>logical layer</strong> is invisible. It's a set of behind-the-scenes instructions that tell software: "This text is a heading. This image shows a bar chart. This table has a header row. Read this paragraph before that one."</p>
+          <p>Screen readers and other assistive technology ignore the visual layer entirely. They rely <em>only</em> on the logical layer to understand the document. If the logical layer is absent, wrong, or incomplete — the user gets garbage.</p>
+
+          <div class="inline-tip">
+            <strong>🔑 Key insight</strong>
+            A visually beautiful PDF can be completely inaccessible. And an accessible PDF looks <em>exactly</em> the same as any other PDF to most users. Accessibility is invisible infrastructure.
+          </div>
+
+          <h3>The four pillars of accessible PDFs</h3>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <h4>Tags (structure)</h4>
+                <p>PDF tags define what every element is: heading, paragraph, list, table, figure. Without tags, the document is a flat, unstructured image of text to assistive technology.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <h4>Reading order</h4>
+                <p>The order in which content is read out loud must match the intended logical order — not the visual layout. Multi-column layouts and complex designs often get this wrong automatically.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <h4>Alternative text for images</h4>
+                <p>Every meaningful image must have a text description (alt text). Decorative images must be explicitly marked as such so they're skipped by screen readers.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-content">
+                <h4>Metadata and document properties</h4>
+                <p>Title, language, and other metadata help screen readers identify what document they're in and read it in the correct language with the right pronunciation rules.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="section-aside">
+          <div class="info-box tip">
+            <div class="info-box-label"><div class="info-box-icon">✦</div> Tiny tip</div>
+            <h4>Test with a screen reader</h4>
+            <p>The fastest way to understand PDF accessibility is to try it yourself. Download NVDA (free, Windows) or use VoiceOver (built into Mac and iOS) and try navigating your own PDF.</p>
+            <a href="https://www.nvaccess.org/download/" target="_blank" rel="noopener">Download NVDA ↗</a>
+          </div>
+
+          <div class="info-box fact">
+            <div class="info-box-label"><div class="info-box-icon">★</div> Did you know?</div>
+            <h4>Screen readers have been around since the 1980s</h4>
+            <p>The first commercial screen reader, JAWS, launched in 1989. Yet most PDFs still fail basic screen reader tests today.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="section-break"><span>✦</span></div>
+
+    <!-- ═══ SECTION 5: TAGS ═══ -->
+    <section class="section" id="tags">
+      <div class="section-inner">
+        <div class="section-main">
+          <div class="chapter-label">Chapter 05</div>
+          <h2>Tags: the invisible skeleton of your PDF</h2>
+          <p>Tags are the most important accessibility feature in a PDF. They are hidden codes attached to every element in the document that describe what that element <em>is</em> — not what it looks like, but what role it plays.</p>
+          <p>Think of tags like HTML elements on a website: <code>&lt;h1&gt;</code> for a main heading, <code>&lt;p&gt;</code> for a paragraph, <code>&lt;ul&gt;</code> for a bullet list. PDF tags work the same way.</p>
+
+          <h3>Common PDF tags you need to know</h3>
+
+          <table class="criteria-table" role="table">
+            <thead>
+              <tr>
+                <th>Tag</th>
+                <th>Means</th>
+                <th>Why it matters</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>&lt;H1&gt;–&lt;H6&gt;</code></td>
+                <td>Headings</td>
+                <td>Screen reader users navigate by headings to jump around the document — like a table of contents</td>
+              </tr>
+              <tr>
+                <td><code>&lt;P&gt;</code></td>
+                <td>Paragraph</td>
+                <td>Normal body text. Without this tag, blocks of text may be read as a single line or ignored</td>
+              </tr>
+              <tr>
+                <td><code>&lt;L&gt; &lt;LI&gt;</code></td>
+                <td>List / List item</td>
+                <td>Screen readers announce "list of 5 items" — giving context before reading each item</td>
+              </tr>
+              <tr>
+                <td><code>&lt;Table&gt; &lt;TR&gt; &lt;TH&gt; &lt;TD&gt;</code></td>
+                <td>Tables</td>
+                <td>Without table tags, tabular data is read as a confusing stream of unrelated cells</td>
+              </tr>
+              <tr>
+                <td><code>&lt;Figure&gt;</code></td>
+                <td>Image / graphic</td>
+                <td>Marks where images are, so alt text can be linked to them</td>
+              </tr>
+              <tr>
+                <td><code>&lt;Artifact&gt;</code></td>
+                <td>Decorative content</td>
+                <td>Tells screen readers to skip this element — used for page numbers, decorative lines, etc.</td>
+              </tr>
+              <tr>
+                <td><code>&lt;Link&gt;</code></td>
+                <td>Hyperlink</td>
+                <td>Makes links recognisable and keyboard-operable</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="inline-tip">
+            <strong>🔑 Key insight</strong>
+            Tags must be <em>correct</em>, not just present. A heading tagged as a paragraph is still inaccessible — the text might be big and bold visually, but a screen reader won't identify it as a navigation point.
+          </div>
+        </div>
+
+        <aside class="section-aside">
+          <div class="info-box standard">
+            <div class="info-box-label"><div class="info-box-icon">≡</div> Standard</div>
+            <h4>PDF 2.0 Tag Set</h4>
+            <p>PDF 2.0 (ISO 32000-2) introduced an expanded and more precise tag set. If you're creating new accessible PDFs, target PDF 2.0 for best compatibility with modern assistive technology.</p>
+            <a href="https://www.iso.org/standard/75839.html" target="_blank" rel="noopener">ISO 32000-2 ↗</a>
+          </div>
+
+          <div class="info-box tip">
+            <div class="info-box-label"><div class="info-box-icon">✦</div> Tiny tip</div>
+            <h4>Tags panel in Acrobat</h4>
+            <p>In Adobe Acrobat, open the Tags panel (View → Navigation Panels → Tags) to inspect the tag tree of any PDF. This is what a screen reader sees.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="section-break"><span>✦</span></div>
+
+    <!-- ═══ SECTION 6: ALT TEXT ═══ -->
+    <section class="section" id="alt-text">
+      <div class="section-inner">
+        <div class="section-main">
+          <div class="chapter-label">Chapter 06</div>
+          <h2>Images and alt text</h2>
+          <p>Every image in a PDF falls into one of two categories: <strong>meaningful</strong> or <strong>decorative</strong>. The handling is completely different for each.</p>
+
+          <h3>Meaningful images</h3>
+          <p>These images convey information that isn't available anywhere else in the text. A chart, a photograph of a product, a diagram of a process, a signature — these are meaningful. They need <strong>alternative text (alt text)</strong>: a written description that communicates the same information the image provides visually.</p>
+
+          <div class="inline-tip">
+            <strong>✦ Writing good alt text</strong>
+            Don't say "image of a graph." Say what the graph <em>shows</em>: "Bar chart showing a 40% increase in sales from Q1 to Q4 2023." The goal is to convey the meaning, not describe the image's existence.
+          </div>
+
+          <h3>Decorative images</h3>
+          <p>These are visual elements that don't add information — ornamental lines, background shapes, purely aesthetic illustrations. These should be marked as <code>Artifact</code> in the PDF tag structure, which tells screen readers to skip them entirely. This avoids cluttering the listening experience with meaningless descriptions.</p>
+
+          <div class="did-you-know">
+            <div class="did-you-know-label">💡 Did you know?</div>
+            <p>Charts and infographics are the most commonly inaccessible images in PDFs. A complex chart with no alt text is completely invisible to a screen reader user. <strong>Every data point, trend, and key insight must be described in text</strong> — either as alt text or as a caption below the image.</p>
+          </div>
+
+          <h3>Complex images: go further</h3>
+          <p>For complex diagrams, infographics, or charts, alt text alone may not be enough. Consider:</p>
+          <ul class="checklist">
+            <li><div class="check-icon">✓</div><div>Providing a full text description of the chart's data in the document body</div></li>
+            <li><div class="check-icon">✓</div><div>Adding a data table below the chart with the actual numbers</div></li>
+            <li><div class="check-icon">✓</div><div>Using a "long description" linked from the figure (supported in PDF/UA)</div></li>
+          </ul>
+        </div>
+
+        <aside class="section-aside">
+          <div class="info-box tip">
+            <div class="info-box-label"><div class="info-box-icon">✦</div> Tiny tip</div>
+            <h4>The alt text litmus test</h4>
+            <p>Close your eyes. Listen to your alt text read aloud. Did you understand everything the image communicates? If not, it needs more work.</p>
+          </div>
+
+          <div class="info-box tip">
+            <div class="info-box-label"><div class="info-box-icon">✦</div> Tiny tip</div>
+            <h4>Company logos</h4>
+            <p>A company logo used purely as branding (e.g. in a header) is usually decorative. A logo used to identify a company in a list of partners is meaningful. Context decides.</p>
+          </div>
+
+          <div class="info-box fact">
+            <div class="info-box-label"><div class="info-box-icon">★</div> Did you know?</div>
+            <h4>AI can help — but not replace judgment</h4>
+            <p>Modern AI tools can auto-generate alt text. But they often describe what they see literally, not what the image means contextually. Always review AI-generated alt text.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="section-break"><span>✦</span></div>
+
+    <!-- ═══ SECTION 7: READING ORDER ═══ -->
+    <section class="section" id="reading-order">
+      <div class="section-inner">
+        <div class="section-main">
+          <div class="chapter-label">Chapter 07</div>
+          <h2>Reading order: the hidden disaster in most PDFs</h2>
+          <p>This is the issue that surprises most people. A PDF can look perfectly logical on screen — columns flowing naturally left to right, captions under images, headings before body text. But the <em>actual</em> reading order stored in the file can be completely different.</p>
+          <p>Screen readers follow the reading order defined in the file structure — not the visual layout. A two-column PDF might read all of column 1, then all of column 2... or it might jump randomly between both. A caption might be read before the image it refers to. A sidebar might interrupt the middle of a sentence.</p>
+
+          <h3>Why does this happen?</h3>
+          <p>Most design applications place elements on the page in the order they were created — not the order they should be read. A graphic designer who adds a pull quote after the main text will place it after the main text in the file structure, even if visually it appears in the middle of a paragraph.</p>
+
+          <h3>How to fix it</h3>
+          <p>Reading order must be set manually for complex layouts. In Adobe Acrobat Pro, you can use the <strong>Reading Order tool</strong> or the <strong>Tags panel</strong> to reorder elements. In InDesign, you control reading order through the Articles panel before export.</p>
+
+          <div class="inline-tip">
+            <strong>🔑 Key insight</strong>
+            The golden rule: the reading order in the file must match the logical reading order of the document — regardless of how the content is visually arranged on the page.
+          </div>
+        </div>
+
+        <aside class="section-aside">
+          <div class="info-box tip">
+            <div class="info-box-label"><div class="info-box-icon">✦</div> Tiny tip</div>
+            <h4>The Tab key test</h4>
+            <p>Open your PDF in Acrobat Reader and press Tab repeatedly. Elements will highlight in the order they'll be read by a screen reader. If this jumps around unexpectedly, your reading order needs work.</p>
+          </div>
+
+          <div class="info-box tip">
+            <div class="info-box-label"><div class="info-box-icon">✦</div> Tiny tip</div>
+            <h4>Multi-column layouts</h4>
+            <p>Multi-column layouts are the most common source of reading order problems. Always verify the reading order of any document with more than one column.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="section-break"><span>✦</span></div>
+
+    <!-- ═══ SECTION 8: WCAG ═══ -->
+    <section class="section" id="wcag">
+      <div class="section-inner">
+        <div class="section-main">
+          <div class="chapter-label">Chapter 08</div>
+          <h2>WCAG: the global accessibility rulebook</h2>
+          <p>The <strong>Web Content Accessibility Guidelines (WCAG)</strong> are the internationally recognised set of rules for digital accessibility. Although written for websites, WCAG applies to PDF documents too — and is referenced in virtually every national accessibility law worldwide.</p>
+          <p>WCAG is built on <strong>four principles</strong>, often remembered as <strong>POUR</strong>:</p>
+
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon" style="background:#dbeafe; font-size:28px;">P</div>
+              <h4>Perceivable</h4>
+              <p>Information must be presentable in ways users can perceive — including through non-visual means.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon" style="background:#dcfce7; font-size:28px;">O</div>
+              <h4>Operable</h4>
+              <p>All functionality must be operable — for example, navigable via keyboard, not just a mouse.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon" style="background:#fef3c7; font-size:28px;">U</div>
+              <h4>Understandable</h4>
+              <p>Content and operation must be understandable — clear language, predictable structure.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon" style="background:#f3e8ff; font-size:28px;">R</div>
+              <h4>Robust</h4>
+              <p>Content must be interpreted reliably by a wide variety of assistive technologies, now and in the future.</p>
+            </div>
+          </div>
+
+          <h3>The three levels of conformance</h3>
+          <p>WCAG criteria are organised into three levels. <strong>Level AA</strong> is the standard required by most laws.</p>
+
+          <table class="criteria-table" role="table">
+            <thead>
+              <tr>
+                <th>Level</th>
+                <th>What it means</th>
+                <th>Example for PDFs</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="level-a">A</span></td>
+                <td>Minimum. Must pass. Without this, some users cannot access the content at all.</td>
+                <td>All images have alt text; document has a title; language is set</td>
+              </tr>
+              <tr>
+                <td><span class="level-aa">AA</span></td>
+                <td>Standard. Required by most legislation. Removes significant barriers.</td>
+                <td>Colour contrast ratio at least 4.5:1; text can be resized 200% without loss of content</td>
+              </tr>
+              <tr>
+                <td><span class="level-aaa">AAA</span></td>
+                <td>Enhanced. Not always possible for all content. Going above and beyond.</td>
+                <td>Contrast ratio at least 7:1; sign language interpretation provided</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Colour contrast: the most commonly failed criterion</h3>
+          <p>Text must have sufficient contrast against its background. This is one of the most frequently failed accessibility criteria — and it's one of the easiest to check.</p>
+
+          <div class="contrast-demo">
+            <div>
+              <div class="contrast-bad">Light grey on grey — hard to read</div>
+              <p class="contrast-label bad">✗ Fails AA (ratio: ~1.6:1)</p>
+            </div>
+            <div>
+              <div class="contrast-good">White on dark — easy to read</div>
+              <p class="contrast-label good">✓ Passes AAA (ratio: 15.5:1)</p>
+            </div>
+          </div>
+
+          <div class="did-you-know">
+            <div class="did-you-know-label">💡 Did you know?</div>
+            <p>WCAG 3.0 is currently under development and will introduce a new contrast model called APCA (Advanced Perceptual Contrast Algorithm), which better reflects how human eyes perceive contrast than the current formula.</p>
+          </div>
+        </div>
+
+        <aside class="section-aside">
+          <div class="info-box standard">
+            <div class="info-box-label"><div class="info-box-icon">≡</div> Standard</div>
+            <h4>WCAG 2.2</h4>
+            <p>The current version of the Web Content Accessibility Guidelines. Published by the W3C. Referenced by laws in the EU, USA, UK, Canada, Australia, and many other countries.</p>
+            <a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener">Read WCAG 2.2 ↗</a>
+          </div>
+
+          <div class="info-box tip">
+            <div class="info-box-label"><div class="info-box-icon">✦</div> Tiny tip</div>
+            <h4>Check contrast instantly</h4>
+            <p>Use the free WebAIM Contrast Checker to instantly verify whether any two colours meet WCAG contrast requirements.</p>
+            <a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener">Contrast Checker ↗</a>
+          </div>
+
+          <div class="info-box tip">
+            <div class="info-box-label"><div class="info-box-icon">✦</div> Tiny tip</div>
+            <h4>Don't rely on colour alone</h4>
+            <p>Never use colour as the <em>only</em> way to convey information. About 8% of men have colour blindness and will miss colour-only cues.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="section-break"><span>✦</span></div>
+
+    <!-- ═══ SECTION 9: TOOLS ═══ -->
+    <section class="section" id="tools">
+      <div class="section-inner">
+        <div class="section-main">
+          <div class="chapter-label">Chapter 09</div>
+          <h2>Testing tools — how to check your PDFs</h2>
+          <p>You can't rely on visual inspection to verify PDF accessibility. You need dedicated tools that inspect the underlying structure and report problems automatically.</p>
+
+          <h3>Automated checking tools</h3>
+          <ul class="resource-list">
+            <li>
+              <span class="r-icon">🔷</span>
+              <div class="r-body">
+                <span class="r-title">Adobe Acrobat Accessibility Checker</span>
+                <span class="r-desc">Built into Acrobat Pro (and available in free Acrobat Reader to a lesser extent). Runs an automated check against PDF/UA and WCAG criteria. A good first pass — but not exhaustive.</span>
+                <a href="https://helpx.adobe.com/acrobat/using/create-verify-pdf-accessibility.html" target="_blank" rel="noopener">Adobe Accessibility Guide ↗</a>
+              </div>
+            </li>
+            <li>
+              <span class="r-icon">🟢</span>
+              <div class="r-body">
+                <span class="r-title">PAC 2024 (PDF Accessibility Checker)</span>
+                <span class="r-desc">Free tool for Windows. One of the most thorough automated PDF accessibility checkers available. Checks against PDF/UA and WCAG. Highly recommended for anyone creating accessible PDFs professionally.</span>
+                <a href="https://pac.pdf-accessibility.org/" target="_blank" rel="noopener">Download PAC 2024 ↗</a>
+              </div>
+            </li>
+            <li>
+              <span class="r-icon">🟡</span>
+              <div class="r-body">
+                <span class="r-title">axe DevTools for PDFs</span>
+                <span class="r-desc">Professional accessibility testing platform with PDF support. Used widely by enterprises and accessibility consultants.</span>
+                <a href="https://www.deque.com/axe/" target="_blank" rel="noopener">axe DevTools ↗</a>
+              </div>
+            </li>
+            <li>
+              <span class="r-icon">🔴</span>
+              <div class="r-body">
+                <span class="r-title">CommonLook PDF (Formerly Commonlook)</span>
+                <span class="r-desc">Enterprise-grade PDF accessibility testing and remediation tool. Widely used in government and large organisations.</span>
+                <a href="https://commonlook.com/accessibility-software/pdf/" target="_blank" rel="noopener">CommonLook ↗</a>
+              </div>
+            </li>
+          </ul>
+
+          <h3>Screen readers for manual testing</h3>
+          <ul class="resource-list">
+            <li>
+              <span class="r-icon">🖥️</span>
+              <div class="r-body">
+                <span class="r-title">NVDA — NonVisual Desktop Access</span>
+                <span class="r-desc">Free, open-source screen reader for Windows. The most commonly used screen reader in the world. Essential for testing how your PDFs actually sound to users.</span>
+                <a href="https://www.nvaccess.org/download/" target="_blank" rel="noopener">Download NVDA ↗</a>
+              </div>
+            </li>
+            <li>
+              <span class="r-icon">🍎</span>
+              <div class="r-body">
+                <span class="r-title">VoiceOver (Apple)</span>
+                <span class="r-desc">Built into macOS, iOS, and iPadOS. No installation needed. Activate with Cmd+F5 on Mac. A great way to test PDFs on Apple devices.</span>
+                <a href="https://support.apple.com/en-gb/guide/voiceover/welcome/mac" target="_blank" rel="noopener">VoiceOver Guide ↗</a>
+              </div>
+            </li>
+            <li>
+              <span class="r-icon">🪟</span>
+              <div class="r-body">
+                <span class="r-title">Narrator (Windows)</span>
+                <span class="r-desc">Built into Windows. Less feature-rich than NVDA or JAWS, but useful for a quick sanity check without installing anything.</span>
+                <a href="https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1" target="_blank" rel="noopener">Narrator Guide ↗</a>
+              </div>
+            </li>
+          </ul>
+
+          <div class="inline-tip">
+            <strong>⚠️ Important</strong>
+            Automated tools catch roughly 30–40% of accessibility issues. Manual testing with a real screen reader is essential to find the problems automated tools miss. Never rely on automated checking alone.
+          </div>
+        </div>
+
+        <aside class="section-aside">
+          <div class="info-box tip">
+            <div class="info-box-label"><div class="info-box-icon">✦</div> Tiny tip</div>
+            <h4>Test order matters</h4>
+            <p>Run PAC 2024 first to catch structural errors quickly, then do a manual screen reader test to catch logical and experiential issues the automated tool misses.</p>
+          </div>
+
+          <div class="info-box fact">
+            <div class="info-box-label"><div class="info-box-icon">★</div> Did you know?</div>
+            <h4>JAWS is the market leader</h4>
+            <p>JAWS (Job Access With Speech) by Freedom Scientific is the most widely used screen reader in workplace and enterprise settings — but it costs $1,000+/year. NVDA is the free alternative used by most home users.</p>
+            <a href="https://www.freedomscientific.com/products/software/jaws/" target="_blank" rel="noopener">About JAWS ↗</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="section-break"><span>✦</span></div>
+
+    <!-- ═══ SECTION 10: CHECKLIST ═══ -->
+    <section class="section" id="checklist">
+      <div class="section-inner">
+        <div class="section-main">
+          <div class="chapter-label">Chapter 10</div>
+          <h2>The accessibility checklist — before you publish</h2>
+          <p>Use this checklist before sharing any PDF. It covers the most critical requirements. A document that passes all of these is well on its way to genuine accessibility.</p>
+
+          <ul class="checklist" role="list" aria-label="PDF accessibility checklist">
+            <li><div class="check-icon">✓</div><div><strong>The document has a descriptive title</strong> set in Document Properties (not just the filename).</div></li>
+            <li><div class="check-icon">✓</div><div><strong>The document language is set</strong> in Document Properties. This ensures screen readers use the right voice and pronunciation.</div></li>
+            <li><div class="check-icon">✓</div><div><strong>The PDF is tagged.</strong> All content elements — headings, paragraphs, lists, tables — have correct semantic tags.</div></li>
+            <li><div class="check-icon">✓</div><div><strong>Heading levels are logical and nested correctly.</strong> H1 → H2 → H3, never jumping from H1 to H4.</div></li>
+            <li><div class="check-icon">✓</div><div><strong>Reading order is logical</strong> and matches the intended reading sequence, especially in multi-column layouts.</div></li>
+            <li><div class="check-icon">✓</div><div><strong>All meaningful images have alt text.</strong> Decorative images are marked as Artifacts.</div></li>
+            <li><div class="check-icon">✓</div><div><strong>Tables have header rows tagged with &lt;TH&gt;</strong> and are not used for layout purposes.</div></li>
+            <li><div class="check-icon">✓</div><div><strong>Colour contrast meets WCAG AA</strong>: at least 4.5:1 for normal text, 3:1 for large text (18pt+ or 14pt bold+).</div></li>
+            <li><div class="check-icon">✓</div><div><strong>Colour is not the only means of conveying information.</strong> Symbols, labels, or patterns supplement colour cues.</div></li>
+            <li><div class="check-icon">✓</div><div><strong>All links have descriptive text.</strong> Not "click here" — but "Download the 2024 Annual Report (PDF)".</div></li>
+            <li><div class="check-icon">✓</div><div><strong>Forms are accessible.</strong> All form fields have labels, correct tab order, and error messages that don't rely on colour alone.</div></li>
+            <li><div class="check-icon">✓</div><div><strong>The PDF passes PAC 2024 or Adobe Preflight</strong> with no critical errors.</div></li>
+            <li><div class="check-icon">✓</div><div><strong>Manual screen reader test completed.</strong> The document was listened to in NVDA or VoiceOver and made sense throughout.</div></li>
+          </ul>
+
+          <div class="did-you-know">
+            <div class="did-you-know-label">💡 Did you know?</div>
+            <p>The <strong>PDF/UA standard requires a conformance claim</strong> in the document metadata. Without this claim, a PDF cannot be said to conform to PDF/UA — even if it passes all technical checks. Add the XMP metadata flag in Acrobat or during export from InDesign.</p>
+          </div>
+        </div>
+
+        <aside class="section-aside">
+          <div class="info-box law">
+            <div class="info-box-label"><div class="info-box-icon">⚖</div> Law</div>
+            <h4>VPAT / ACR documents</h4>
+            <p>In the USA, government and enterprise procurement often requires a Voluntary Product Accessibility Template (VPAT) — an Accessibility Conformance Report documenting how your content meets Section 508 and WCAG.</p>
+            <a href="https://www.itic.org/policy/accessibility/vpat" target="_blank" rel="noopener">About VPATs ↗</a>
+          </div>
+
+          <div class="info-box standard">
+            <div class="info-box-label"><div class="info-box-icon">≡</div> Standard</div>
+            <h4>Matterhorn Protocol</h4>
+            <p>A set of 136 failure conditions for PDF/UA testing. Used by PAC and other checkers as the definitive list of things that can make a PDF non-compliant.</p>
+            <a href="https://www.pdfa.org/resource/the-matterhorn-protocol/" target="_blank" rel="noopener">Matterhorn Protocol ↗</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="section-break"><span>✦</span></div>
+
+    <!-- ═══ SECTION 11: RESOURCES ═══ -->
+    <section class="section" id="resources">
+      <div class="section-inner">
+        <div class="section-main">
+          <div class="chapter-label">Chapter 11</div>
+          <h2>Essential resources and further reading</h2>
+          <p>PDF accessibility is a deep field with an active community. Here are the most important resources to bookmark — all free, all authoritative.</p>
+
+          <h3>Official standards and guidelines</h3>
+          <ul class="resource-list">
+            <li>
+              <span class="r-icon">📘</span>
+              <div class="r-body">
+                <span class="r-title">WCAG 2.2 — W3C</span>
+                <span class="r-desc">The full WCAG 2.2 specification. The authoritative global standard for digital accessibility. Dense, but the Understanding documents alongside it make it accessible.</span>
+                <a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener">wcag 2.2 ↗</a>
+              </div>
+            </li>
+            <li>
+              <span class="r-icon">📙</span>
+              <div class="r-body">
+                <span class="r-title">PDF/UA Overview — PDF Association</span>
+                <span class="r-desc">The PDF Association is the custodian of PDF standards. Their resources on PDF/UA are the most authoritative and practical available.</span>
+                <a href="https://www.pdfa.org/pdf-ua/" target="_blank" rel="noopener">pdfa.org/pdf-ua ↗</a>
+              </div>
+            </li>
+            <li>
+              <span class="r-icon">📗</span>
+              <div class="r-body">
+                <span class="r-title">Section 508 PDF Resources — GSA</span>
+                <span class="r-desc">The US General Services Administration publishes detailed guidance on making PDFs accessible under Section 508. Practical and clear.</span>
+                <a href="https://www.section508.gov/develop/pdfs/" target="_blank" rel="noopener">section508.gov ↗</a>
+              </div>
+            </li>
+          </ul>
+
+          <h3>Practical guidance</h3>
+          <ul class="resource-list">
+            <li>
+              <span class="r-icon">🌐</span>
+              <div class="r-body">
+                <span class="r-title">WebAIM — Web Accessibility In Mind</span>
+                <span class="r-desc">The best practical, human-readable guide to web and document accessibility on the internet. Their PDF Accessibility guide is essential reading.</span>
+                <a href="https://webaim.org/techniques/acrobat/" target="_blank" rel="noopener">WebAIM PDF Guide ↗</a>
+              </div>
+            </li>
+            <li>
+              <span class="r-icon">🛠️</span>
+              <div class="r-body">
+                <span class="r-title">Adobe Accessibility Resource Centre</span>
+                <span class="r-desc">Adobe's own documentation on creating and verifying accessible PDFs in Acrobat and InDesign. Up-to-date and comprehensive.</span>
+                <a href="https://www.adobe.com/accessibility/products/acrobat.html" target="_blank" rel="noopener">Adobe Accessibility ↗</a>
+              </div>
+            </li>
+            <li>
+              <span class="r-icon">📊</span>
+              <div class="r-body">
+                <span class="r-title">WebAIM Million — Annual Accessibility Report</span>
+                <span class="r-desc">Annual analysis of the top 1 million websites and documents for accessibility failures. Sobering and important data on the state of digital accessibility.</span>
+                <a href="https://webaim.org/projects/million/" target="_blank" rel="noopener">WebAIM Million ↗</a>
+              </div>
+            </li>
+            <li>
+              <span class="r-icon">🇪🇺</span>
+              <div class="r-body">
+                <span class="r-title">EU Web Accessibility Directive</span>
+                <span class="r-desc">The full text and guidance on Directive (EU) 2016/2102 — the public sector accessibility directive. Includes monitoring requirements and complaint mechanisms.</span>
+                <a href="https://digital-strategy.ec.europa.eu/en/policies/web-accessibility" target="_blank" rel="noopener">EU Digital Strategy ↗</a>
+              </div>
+            </li>
+          </ul>
+
+          <h3>Tools</h3>
+          <ul class="resource-list">
+            <li>
+              <span class="r-icon">✅</span>
+              <div class="r-body">
+                <span class="r-title">PAC 2024 — PDF Accessibility Checker</span>
+                <span class="r-desc">Free. Windows. The gold standard automated PDF accessibility checker. Tests against PDF/UA and WCAG. Use it on every PDF before publishing.</span>
+                <a href="https://pac.pdf-accessibility.org/" target="_blank" rel="noopener">pac.pdf-accessibility.org ↗</a>
+              </div>
+            </li>
+            <li>
+              <span class="r-icon">🎨</span>
+              <div class="r-body">
+                <span class="r-title">WebAIM Contrast Checker</span>
+                <span class="r-desc">Free online tool. Enter two colours and instantly see whether they pass WCAG AA or AAA contrast requirements. Bookmark this.</span>
+                <a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener">Contrast Checker ↗</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="section-aside">
+          <div class="info-box resource">
+            <div class="info-box-label"><div class="info-box-icon">↗</div> Resource</div>
+            <h4>APDF/UA Technical Implementation Guide</h4>
+            <p>The PDF Association's technical implementation guide for PDF/UA. Required reading for accessibility professionals working with PDFs.</p>
+            <a href="https://www.pdfa.org/resource/pdfua-technical-implementation-guide-tug/" target="_blank" rel="noopener">PDF/UA TUG ↗</a>
+          </div>
+
+          <div class="info-box resource">
+            <div class="info-box-label"><div class="info-box-icon">↗</div> Resource</div>
+            <h4>IAAP — Accessibility Certification</h4>
+            <p>The International Association of Accessibility Professionals offers the CPACC and WAS certifications — recognised professional qualifications in digital accessibility.</p>
+            <a href="https://www.accessibilityassociation.org/" target="_blank" rel="noopener">IAAP ↗</a>
+          </div>
+
+          <div class="info-box fact">
+            <div class="info-box-label"><div class="info-box-icon">★</div> Did you know?</div>
+            <h4>Accessibility Overlays don't work for PDFs</h4>
+            <p>Some companies sell "overlay" tools that claim to auto-fix accessibility. For PDFs, these don't exist in any meaningful form — proper accessibility must be built into the document structure.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </div><!-- /content -->
+
+  <!-- ═══ GLOSSARY ═══ -->
+  <div class="content">
+    <div class="section-break"><span>✦</span></div>
+
+    <section class="section" id="glossary">
+      <div class="section-inner">
+        <div class="section-main">
+          <div class="chapter-label">Chapter 12</div>
+          <h2>Glossary — the words you'll keep hearing</h2>
+          <p>PDF accessibility has its own vocabulary. Here's every term in plain language, in one place.</p>
+
+          <dl style="margin-top:28px;">
+            <div style="padding:16px 0; border-bottom:1px solid var(--border);">
+              <dt style="font-weight:700; color:var(--ink); font-size:16px; margin-bottom:6px;">Accessibility</dt>
+              <dd style="color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0;">The design principle that products, services, and documents should be usable by everyone — regardless of ability, disability, or the technology they use.</dd>
+            </div>
+            <div style="padding:16px 0; border-bottom:1px solid var(--border);">
+              <dt style="font-weight:700; color:var(--ink); font-size:16px; margin-bottom:6px;">Alt text (Alternative text)</dt>
+              <dd style="color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0;">A written description of an image, embedded in the file. Read aloud by screen readers. Describes what the image communicates — not just what it looks like.</dd>
+            </div>
+            <div style="padding:16px 0; border-bottom:1px solid var(--border);">
+              <dt style="font-weight:700; color:var(--ink); font-size:16px; margin-bottom:6px;">Artifact</dt>
+              <dd style="color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0;">A PDF tag that marks an element as purely decorative. Screen readers skip artifacts entirely — no description is read out.</dd>
+            </div>
+            <div style="padding:16px 0; border-bottom:1px solid var(--border);">
+              <dt style="font-weight:700; color:var(--ink); font-size:16px; margin-bottom:6px;">Assistive technology (AT)</dt>
+              <dd style="color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0;">Any hardware or software that helps people with disabilities interact with technology. Includes screen readers, braille displays, switch controls, voice control, and more.</dd>
+            </div>
+            <div style="padding:16px 0; border-bottom:1px solid var(--border);">
+              <dt style="font-weight:700; color:var(--ink); font-size:16px; margin-bottom:6px;">Colour contrast ratio</dt>
+              <dd style="color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0;">A number expressing how different two colours are in terms of luminance. WCAG AA requires at least 4.5:1 for body text. The higher the ratio, the easier text is to read.</dd>
+            </div>
+            <div style="padding:16px 0; border-bottom:1px solid var(--border);">
+              <dt style="font-weight:700; color:var(--ink); font-size:16px; margin-bottom:6px;">EN 301 549</dt>
+              <dd style="color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0;">The European standard for ICT accessibility. References WCAG 2.1 and PDF/UA. Required for public procurement across the EU.</dd>
+            </div>
+            <div style="padding:16px 0; border-bottom:1px solid var(--border);">
+              <dt style="font-weight:700; color:var(--ink); font-size:16px; margin-bottom:6px;">Heading hierarchy</dt>
+              <dd style="color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0;">The logical nesting of headings: H1 for the document title, H2 for main sections, H3 for subsections, and so on. Screen reader users navigate documents by jumping between headings.</dd>
+            </div>
+            <div style="padding:16px 0; border-bottom:1px solid var(--border);">
+              <dt style="font-weight:700; color:var(--ink); font-size:16px; margin-bottom:6px;">Matterhorn Protocol</dt>
+              <dd style="color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0;">A list of 136 failure conditions for PDF/UA. The definitive technical reference used by testing tools like PAC 2024 to evaluate PDF accessibility compliance.</dd>
+            </div>
+            <div style="padding:16px 0; border-bottom:1px solid var(--border);">
+              <dt style="font-weight:700; color:var(--ink); font-size:16px; margin-bottom:6px;">PAC 2024</dt>
+              <dd style="color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0;">PDF Accessibility Checker — a free Windows tool that tests PDFs against PDF/UA and WCAG criteria. One of the most thorough automated checkers available.</dd>
+            </div>
+            <div style="padding:16px 0; border-bottom:1px solid var(--border);">
+              <dt style="font-weight:700; color:var(--ink); font-size:16px; margin-bottom:6px;">PDF/UA (ISO 14289)</dt>
+              <dd style="color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0;">The international standard for universally accessible PDF files. Defines the technical requirements a PDF must meet to be considered fully accessible.</dd>
+            </div>
+            <div style="padding:16px 0; border-bottom:1px solid var(--border);">
+              <dt style="font-weight:700; color:var(--ink); font-size:16px; margin-bottom:6px;">POUR</dt>
+              <dd style="color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0;">The four principles of WCAG: Perceivable, Operable, Understandable, Robust. Every WCAG criterion maps to one of these four principles.</dd>
+            </div>
+            <div style="padding:16px 0; border-bottom:1px solid var(--border);">
+              <dt style="font-weight:700; color:var(--ink); font-size:16px; margin-bottom:6px;">Reading order</dt>
+              <dd style="color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0;">The sequence in which a screen reader encounters content in a PDF. Must match the intended logical reading order — regardless of the visual layout on the page.</dd>
+            </div>
+            <div style="padding:16px 0; border-bottom:1px solid var(--border);">
+              <dt style="font-weight:700; color:var(--ink); font-size:16px; margin-bottom:6px;">Remediation</dt>
+              <dd style="color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0;">The process of fixing an existing, non-accessible PDF to meet accessibility standards. Often involves adding tags, correcting reading order, and writing alt text.</dd>
+            </div>
+            <div style="padding:16px 0; border-bottom:1px solid var(--border);">
+              <dt style="font-weight:700; color:var(--ink); font-size:16px; margin-bottom:6px;">Screen reader</dt>
+              <dd style="color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0;">Software that converts text and document structure into speech or braille output. Common examples: NVDA, JAWS (Windows), VoiceOver (Apple). Used by people who are blind, have low vision, or have reading disabilities.</dd>
+            </div>
+            <div style="padding:16px 0; border-bottom:1px solid var(--border);">
+              <dt style="font-weight:700; color:var(--ink); font-size:16px; margin-bottom:6px;">Tags (PDF tags)</dt>
+              <dd style="color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0;">Hidden structural labels attached to every element in an accessible PDF. They define what each element is: heading, paragraph, list, table, image, link, and more.</dd>
+            </div>
+            <div style="padding:16px 0; border-bottom:1px solid var(--border);">
+              <dt style="font-weight:700; color:var(--ink); font-size:16px; margin-bottom:6px;">WCAG</dt>
+              <dd style="color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0;">Web Content Accessibility Guidelines — the global standard for digital accessibility, published by the W3C. Referenced in virtually every national accessibility law worldwide. The current version is WCAG 2.2.</dd>
+            </div>
+            <div style="padding:16px 0;">
+              <dt style="font-weight:700; color:var(--ink); font-size:16px; margin-bottom:6px;">XMP metadata</dt>
+              <dd style="color:var(--ink-soft); font-size:15px; line-height:1.7; margin:0;">Extensible Metadata Platform — a standard for embedding metadata inside files. Used in PDFs to store the document title, language, author, and accessibility conformance claims like PDF/UA.</dd>
+            </div>
+          </dl>
+        </div>
+
+        <aside class="section-aside">
+          <div class="info-box tip">
+            <div class="info-box-label"><div class="info-box-icon">✦</div> Tiny tip</div>
+            <h4>Bookmark this glossary</h4>
+            <p>When reading accessibility standards or reports, terminology can feel overwhelming. Come back here whenever a term stops you in your tracks.</p>
+          </div>
+
+          <div class="info-box fact">
+            <div class="info-box-label"><div class="info-box-icon">★</div> Did you know?</div>
+            <h4>WCAG stands for "wuh-cag"</h4>
+            <p>It's pronounced as one word — "wuh-cag" — not as four separate letters. Now you'll never hesitate saying it out loud in a meeting.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>Ready to make your PDFs accessible?</h2>
+      <p>Professional PDF accessibility — audits, remediation to PDF/UA standard, and hands-on support for teams who want to get it right from the start.</p>
+      <div class="cta-buttons">
+        <a href="https://www.dtp-services.de" class="btn btn-primary" target="_blank" rel="noopener">
+          Visit dtp-services.de →
+        </a>
+        <a href="mailto:hello@dtp-services.de" class="btn btn-ghost">
+          ✉ hello@dtp-services.de
+        </a>
+      </div>
+      <p style="margin-top:40px; font-size:14px; opacity:0.5;">PDF/UA remediation · WCAG auditing · Accessible document design · Training & consulting</p>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <p>
+      Made with care by <a href="https://www.dtp-services.de" target="_blank" rel="noopener">dtp-services.de</a> · 
+      <a href="mailto:hello@dtp-services.de">hello@dtp-services.de</a> · 
+      This page uses no third-party fonts or tracking.
+    </p>
+  </footer>
+
+</div><!-- /page-wrap -->
+
+<script>
+// ─── PIPE BACKGROUND ANIMATION ───
+(function() {
+  const canvas = document.getElementById('pipe-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, pipes = [], animFrame;
+
+  const PIPE_COLOR = 'rgba(37,99,168,0.13)';
+  const LIGHT_COLOR = 'rgba(37,99,168,0.75)';
+  const GLOW_COLOR = 'rgba(100,160,255,0.55)';
+  const PIPE_W = 2;
+  const GRID = 80;
+  const LIGHT_SPEED = 1.8;
+  const LIGHT_LEN = 80;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    buildPipes();
+  }
+
+  function buildPipes() {
+    pipes = [];
+    // Horizontal pipes
+    for (let y = GRID; y < H; y += GRID) {
+      pipes.push({ x1: 0, y1: y, x2: W, y2: y, dir: 'h' });
+    }
+    // Vertical pipes
+    for (let x = GRID; x < W; x += GRID) {
+      pipes.push({ x1: x, y1: 0, x2: x, y2: H, dir: 'v' });
+    }
+    // Create light particles
+    pipes.forEach((pipe, i) => {
+      const len = pipe.dir === 'h' ? W : H;
+      pipes[i].lights = [];
+      const count = Math.floor(len / 300) + 1;
+      for (let j = 0; j < count; j++) {
+        pipes[i].lights.push({
+          pos: Math.random() * len,
+          speed: LIGHT_SPEED * (0.6 + Math.random() * 0.8),
+          active: Math.random() > 0.5
+        });
+      }
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // Draw pipe grid
+    ctx.strokeStyle = PIPE_COLOR;
+    ctx.lineWidth = PIPE_W;
+    pipes.forEach(pipe => {
+      ctx.beginPath();
+      ctx.moveTo(pipe.x1, pipe.y1);
+      ctx.lineTo(pipe.x2, pipe.y2);
+      ctx.stroke();
+    });
+
+    // Draw junction dots
+    ctx.fillStyle = 'rgba(37,99,168,0.18)';
+    for (let y = GRID; y < H; y += GRID) {
+      for (let x = GRID; x < W; x += GRID) {
+        ctx.beginPath();
+        ctx.arc(x, y, 3, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    // Animate lights
+    pipes.forEach(pipe => {
+      const len = pipe.dir === 'h' ? W : H;
+      pipe.lights.forEach(light => {
+        if (!light.active) {
+          light._delay = (light._delay || 0) - 1;
+          if (light._delay <= 0) {
+            light.active = true;
+            light.pos = -LIGHT_LEN;
+            light._delay = 60 + Math.random() * 200;
+          }
+          return;
+        }
+
+        light.pos += light.speed;
+
+        const x1 = pipe.dir === 'h' ? light.pos - LIGHT_LEN : pipe.x1;
+        const y1 = pipe.dir === 'h' ? pipe.y1 : light.pos - LIGHT_LEN;
+        const x2 = pipe.dir === 'h' ? light.pos : pipe.x1;
+        const y2 = pipe.dir === 'h' ? pipe.y1 : light.pos;
+
+        const grad = ctx.createLinearGradient(x1, y1, x2, y2);
+        grad.addColorStop(0, 'rgba(37,99,168,0)');
+        grad.addColorStop(0.5, LIGHT_COLOR);
+        grad.addColorStop(1, 'rgba(37,99,168,0)');
+
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = 2.5;
+        ctx.stroke();
+
+        // Glow dot at the head
+        const gx = pipe.dir === 'h' ? light.pos : pipe.x1;
+        const gy = pipe.dir === 'h' ? pipe.y1 : light.pos;
+        const radial = ctx.createRadialGradient(gx, gy, 0, gx, gy, 12);
+        radial.addColorStop(0, GLOW_COLOR);
+        radial.addColorStop(1, 'rgba(100,160,255,0)');
+        ctx.beginPath();
+        ctx.arc(gx, gy, 12, 0, Math.PI * 2);
+        ctx.fillStyle = radial;
+        ctx.fill();
+
+        if (light.pos > len + LIGHT_LEN) {
+          light.active = false;
+          light._delay = 80 + Math.random() * 180;
+        }
+      });
+    });
+
+    animFrame = requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  draw();
+})();
+
+// ─── SCROLL PROGRESS BAR ───
+const progressBar = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docH = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docH > 0 ? (scrollTop / docH) * 100 : 0;
+  progressBar.style.width = pct + '%';
+}, { passive: true });
+
+// ─── STICKY NAV ───
+const topNav = document.getElementById('topNav');
+window.addEventListener('scroll', () => {
+  topNav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// ─── SCROLL REVEAL ───
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08 });
+
+sections.forEach(s => observer.observe(s));
+
+// Make anchor-targeted section visible immediately
+function revealAnchor() {
+  const id = window.location.hash.slice(1);
+  if (id) {
+    const el = document.getElementById(id);
+    if (el) el.classList.add('visible');
+  }
+}
+revealAnchor();
+window.addEventListener('hashchange', revealAnchor);
+</script>
+</body>
+</html>
