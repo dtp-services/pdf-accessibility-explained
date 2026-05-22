@@ -10,6 +10,9 @@
 <meta name="keywords" content="PDF accessibility, accessible PDF, PDF/UA, WCAG, screen reader, alt text, PDF tags, EN 301 549, EU Accessibility Act, Section 508, remediation, dtp-services">
 <meta name="author" content="dtp-services.de">
 <link rel="canonical" href="https://dtp-services.github.io/pdf-accessibility-explained/">
+<link rel="alternate" hreflang="en" href="https://dtp-services.github.io/pdf-accessibility-explained/">
+<link rel="alternate" hreflang="de" href="https://dtp-services.github.io/pdf-accessibility-explained/de/">
+<link rel="alternate" hreflang="x-default" href="https://dtp-services.github.io/pdf-accessibility-explained/">
 <link rel="icon" href="https://uploads-ssl.webflow.com/602ada7d917db6dc7dc5f258/60343c6e8791cc08023234b5_Asset%204.png" type="image/png">
 <link rel="shortcut icon" href="https://uploads-ssl.webflow.com/602ada7d917db6dc7dc5f258/60343c6e8791cc08023234b5_Asset%204.png" type="image/png">
 
@@ -1225,9 +1228,16 @@
 <div class="progress-bar" id="progress"></div>
 
 <!-- Navigation -->
-<nav class="top-nav" id="topNav">
-  <a href="https://www.dtp-services.de" class="nav-logo" target="_blank" rel="noopener">dtp<span>-services.de</span></a>
-  <a href="mailto:hello@dtp-services.de" class="nav-link">hello@dtp-services.de</a>
+<nav class="top-nav" id="topNav" aria-label="Main navigation">
+  <a href="https://www.dtp-services.de" class="nav-logo" target="_blank" rel="noopener" aria-label="dtp-services.de — Visit our main website">dtp<span>-services.de</span></a>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <div style="display:inline-flex;align-items:center;border:1.5px solid rgba(0,0,0,0.08);border-radius:100px;overflow:hidden;font-size:12px;font-weight:700;background:white;box-shadow:0 4px 24px rgba(0,0,0,0.07);" role="navigation" aria-label="Language selection">
+      <a href="https://dtp-services.github.io/pdf-accessibility-explained/" style="padding:7px 14px;text-decoration:none;background:#2563a8;color:white;letter-spacing:0.04em;" aria-label="English – current language" aria-current="true" hreflang="en">EN</a>
+      <div style="width:1px;height:18px;background:rgba(0,0,0,0.08);" aria-hidden="true"></div>
+      <a href="https://dtp-services.github.io/pdf-accessibility-explained/de/" style="padding:7px 14px;text-decoration:none;color:#6b7280;letter-spacing:0.04em;" aria-label="Deutsch" hreflang="de">DE</a>
+    </div>
+    <a href="mailto:hello@dtp-services.de" class="nav-link" aria-label="Send us an email at hello@dtp-services.de">hello@dtp-services.de</a>
+  </div>
 </nav>
 
 <!-- Pipe background canvas -->
